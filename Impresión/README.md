@@ -1,7 +1,7 @@
 # Servidor de impresión en Windows.
 ##  Comprobación Rubrica.
 
-* (1.3) Comprobar que se imprime de forma local.
+* **(1.3) Comprobar que se imprime de forma local.**
 
 Primero creamos el documento y seleccionamos imprimir.
 
@@ -20,7 +20,7 @@ Vemos que se a guardado en la ruta por defecto.
 ![ComprobacionWindows](./img/Impresion22.png)
 
 
-* (2.2) Comprobar que se imprime de forma remota.
+* **(2.2) Comprobar que se imprime de forma remota.**
 
 Primero buscamos el recurso de red del servidor.
 
@@ -43,7 +43,7 @@ Vamos a ver si se a guardado en la carpeta por defecto.
 ![ComprobacionWindows](./img/Impresion30.png)
 
 
-* (3.3) Comprobar que se imprime desde el navegador.
+*  **(3.3) Comprobar que se imprime desde el navegador.**
 
 Primero vamos a poner en pausa los trabajos de impresión de la impresora.
 
