@@ -1,4 +1,6 @@
 #!/usr/bin/ruby
+require 'colorize'
+require_relative 'read_file'
 def run(file)
   user = `whoami`.strip
   if user == "root"

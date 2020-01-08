@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+require_relative './option'
+require_relative 'read_file'
+file = check_file()
+option(file)

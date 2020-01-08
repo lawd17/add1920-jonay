@@ -1,21 +1,8 @@
 #!/usr/bin/ruby
-require_relative 'r'
-require_relative 'st'
-def option(file)
-  if ARGV[0] == "--help"
-    help
-  elsif ARGV[0] == "--version"
-    version
-  elsif ARGV[0] == "--status"
-    status(file)
-  elsif ARGV[0] == "--run"
-    run(file)
-  else
-    puts "softwarectl: opción inválida --'#{ARGV[0]}'"
-    puts "Pruebe 'softwarectl --help' para más información."
-  end
-end
-
+require_relative 'run'
+require_relative 'status'
+argument1 = ARGV[0]
+argument2 = ARGV[1]
 def help
   puts'
   Usage:
@@ -43,4 +30,19 @@ def version
   This is free software: you are free to change and redistribute it.
   There is NO WARRANTY, to the extent permitted by law.
   "
+end
+
+def option(file)
+  if argument1 == "--help"
+    help
+  elsif argument1 == "--version"
+    version
+  elsif argument1 == "--status" and argument2.nil?
+    status(file)
+  elsif argument1 == "--run" and argument2.nil?
+    run(file)
+  else
+    puts "softwarectl: opción inválida --'#{argument1}'".colorize(:red)
+    puts "Pruebe 'softwarectl --help' para más información.".colorize(:red)
+  end
 end
