@@ -1,0 +1,8 @@
+DEVICE="eth0"
+BOOTPROTO=dhcp
+ONBOOT=yes
+TYPE="Ethernet"
+IPADDR=
+NAME="dhcp"
+HWADDR=
+GATEWAY=
