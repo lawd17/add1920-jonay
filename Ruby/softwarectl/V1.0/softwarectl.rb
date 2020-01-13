@@ -77,7 +77,7 @@ def run(file)
 end
 
 def check_file(input2)
-  ok = system("cat files/#{input2} > /dev/null")
+  ok = `cat files/#{input2} > /dev/null`
   if ok
     file = Hash.new
     open("files/#{input2}", 'r') do |l|
@@ -98,9 +98,9 @@ end
 def check_program(program)
     check = `whereis #{program} | grep bin | wc -l`.to_i
     if check == 0
-      return FALSE
+      return false
     elsif check == 1
-      return TRUE
+      return true
     else
       puts "Error en los datos del fichero".colorize(:red)
       puts "install para instalar y remove para desinstalar".colorize(:red)
