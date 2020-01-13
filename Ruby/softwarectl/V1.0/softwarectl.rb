@@ -1,16 +1,25 @@
 #!/usr/bin/ruby
 require 'colorize'
-
 def option(input1,input2)
   if input1 == "--help"
     help()
   elsif input1 == "--version"
     version()
   elsif input1 == "--status"
-    status(input2)
+    if input2 == nil
+      puts "Error. Falta parametro".colorize(:red)
+      puts "Pruebe 'softwarectl --help' para más información.".colorize(:red)
+    else
+      status(input2)
+    end
   elsif input1 == "--run"
-    file = check_file(input2)
-    run(file)
+    if input2 == nil
+      puts "Error. Falta parametro".colorize(:red)
+      puts "Pruebe 'softwarectl --help' para más información.".colorize(:red)
+    else
+      file = check_file(input2)
+      run(file)
+    end
   else
     puts "softwarectl: opción inválida --'#{input1}'".colorize(:red)
     puts "Pruebe 'softwarectl --help' para más información.".colorize(:red)
@@ -77,7 +86,7 @@ def run(file)
 end
 
 def check_file(input2)
-  ok = `cat files/#{input2} > /dev/null`
+  ok = system("cat files/#{input2} > /dev/null")
   if ok
     file = Hash.new
     open("files/#{input2}", 'r') do |l|
@@ -119,6 +128,6 @@ def status(input2)
   end
 end
 
-input1 = ARGV[0].to_s.strip
-input2 = ARGV[1].to_s.strip
+input1 = ARGV[0]
+input2 = ARGV[1]
 option(input1, input2)
