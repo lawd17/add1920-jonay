@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+ok = `systemctl status bot12`
+
+if ok != true
+  `systemctl restart bot12`
+end
