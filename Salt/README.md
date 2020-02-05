@@ -34,12 +34,17 @@ Comprobar que que no tenemos instalado apache2 en el Minion.
 Ahora vamos a ir al master para comprobar que el minio aparece en la lista de keys y lo podemos registrar.
 
 salt-key -L, vemos que el Máster recibe petición del Minion.
+
 ![ModificarMinion](./img/09.png)
 
 salt-key -a minionXXg, para que el Máster acepte a dicho Minion. Y volvemos a comprobar.
+
 ![ModificarMinion](./img/10.png)
+
+
 #### 2.3 Comprobación conectividad.
 Comprobamos la conectividad desde el Máster a los Minions.
+
 ![ModificarMinion](./img/11.png)
 
 ### 3. Salt States
@@ -76,13 +81,17 @@ Consultamos el estado definidos para cada minion.
 Consultamos los estado en detalle y nos aseguramos que no hay errores.
 
 `salt '*' state.show_lowstate`
+
 ![ModificarMinion](./img/20.png)
 
 `salt '*' state.show_highstate`
+
 ![ModificarMinion](./img/21.png)
 
 Aplicamos el nuevo estado para todos los minions.
+
 ![ModificarMinion](./img/22.png)
+
 ![ModificarMinion](./img/23.png)
 
 ### 4. Crear más estados.
@@ -106,7 +115,9 @@ Añadimos en etc hosts la ip y el nombre del master y en el master el del minion
 ![ModificarMinion](./img/26.png)
 
 Comprbamos en el master con **salt-key -L** que nos aparece el nuevo minion de windows.
+
 ![ModificarMinion](./img/27.png)
 
 Y lo añadimos como hicimos antes.
+
 ![ModificarMinion](./img/28.png)
