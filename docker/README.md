@@ -3,6 +3,7 @@
 ### 1. Instalación y configuración..
 #### 1.1 Habilitar el acceso a la red externa.
 Para que nuestro docker tenga acceso a la red exterior, debemos activar la opción IP_FOWARD en el yast o en su fichero de configuracion **/proc/sys/net/ipv4/ip_forward**
+
 ![AccesoRedExterna](./img/01.png)
 
 #### 1.2. Instalación.
@@ -41,13 +42,16 @@ Buscamos "debian" en el repositorio de Docker Hub.
 ![ModificarMinion](./img/08.png)
 
 Lo descargamos en local.
+
 ![DockerVersion](./img/09.png)
 
 Comprbamos que la tenemos descargada.
+
 ![DockerVersion](./img/10.png)
 
 
 Luego con **docker run** creamos el contenedor.
+
 ![DockerVersion](./img/11.png)
 
 
@@ -55,9 +59,11 @@ Luego con **docker run** creamos el contenedor.
 Instalamos algunas aplicaciones.
 
 Instalamos nginx.
+
 ![aplicaciones](./img/14.png)
 
 Instalamos vim.
+
 ![aplicaciones](./img/15.png)
 
 Vamos a crear un fichero html en nginx.
@@ -86,6 +92,7 @@ Con ese puerto nos vamos a una navegador y accedemos 0.0.0.0:PORT
 ![ModificarMinion](./img/27.png)
 
 Tanbien podemos ver el fichero html que creamos anteriormente, especificandoselo en la url.
+
 ![ModificarMinion](./img/28.png)
 
 
